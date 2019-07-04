@@ -75,14 +75,14 @@ class RomPDO extends Conexao {
             return false;
         }
     }
-            public function reativa($R_id){
+            public function reativa($r_id){
         try{
             $sql = 'UPDATE Rom SET flgstatus = ?  WHERE id = ?';
             
             $stmt = $this->conn->prepare($sql);
               
             $stmt->bindValue(1,  "C");
-            $stmt->bindValue(2,  $R_id);
+            $stmt->bindValue(2,  $r_id);
             
             return $stmt->execute();
             
@@ -93,7 +93,7 @@ class RomPDO extends Conexao {
     }
     public function findAll(){
         try{
-            $stmt = $this->conn->prepare("SELECT * FROM Rom where flgstatus='C' ORDER BY nome ");
+            $stmt = $this->conn->prepare("SELECT * FROM Rom where flgstatus='C' ORDER BY Codnome ");
             if($stmt->execute()){
                 $Roms = Array();
                 while($rs = $stmt->fetch(PDO::FETCH_OBJ)){
@@ -110,7 +110,7 @@ class RomPDO extends Conexao {
     }
         public function finddisable(){
         try{
-            $stmt = $this->conn->prepare("SELECT * FROM Rom where flgstatus='X' ORDER BY nome ");
+            $stmt = $this->conn->prepare("SELECT * FROM Rom where flgstatus='X' ORDER BY Codnome ");
             if($stmt->execute()){
                 $Roms = Array();
                 while($rs = $stmt->fetch(PDO::FETCH_OBJ)){
@@ -125,10 +125,10 @@ class RomPDO extends Conexao {
         }
         
     }
-    public function findByNome($m_nome){
+    public function findByNome($R_Codnome){
         try{
-            $stmt = $this->conn->prepare("SELECT * FROM Rom WHERE lower(nome) LIKE lower(?) and flgstatus='C' ORDER BY nome");
-            $stmt->bindValue(1,'%'. $m_nome . '%');
+            $stmt = $this->conn->prepare("SELECT * FROM Rom WHERE lower(Codnome) LIKE lower(?) and flgstatus='C' ORDER BY Codnome");
+            $stmt->bindValue(1,'%'. $R_Codnome . '%');
             if ($stmt->execute()) {
                 $Roms = Array();
                 while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
@@ -143,10 +143,10 @@ class RomPDO extends Conexao {
         }
     }
     
-    public function findById($R_id) {
+    public function findById($r_id) {
         try {
             $stmt = $this->conn->prepare("SELECT * FROM Rom WHERE id=? and flgstatus='C'");
-            $stmt->bindValue(1, $R_id, PDO::PARAM_INT);
+            $stmt->bindValue(1, $r_id, PDO::PARAM_INT);
             if ($stmt->execute()) {
                 if($rs = $stmt->fetch(PDO::FETCH_OBJ)){
                     return $this->resultSetToRom($rs);

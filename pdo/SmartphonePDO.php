@@ -16,7 +16,7 @@ class SmartphonePDO extends Conexao {
     public function insert($Smartphone){
         try{
             $stmt = $this->conn->prepare("INSERT INTO Smartphone "
-                . "(S_nome,S_marca,S_modelo,S_codnome,S_CPU,S_GPU,S_Ram,S_Armazenamento,S_Chipset,S_Display,S_Rede) "
+                . "(nome,marca,modelo,codnome,CPU,GPU,Ram,Armazenamento,Chipset,Display,Rede) "
                 . "VALUES (?, ? , ? , ? , ? , ? , ? , ? , ? , ? , ? )");
                 $stmt->bindValue(1, $Smartphone->getS_nome());
                 $stmt->bindValue(2, $Smartphone->getS_marca());
@@ -37,22 +37,22 @@ class SmartphonePDO extends Conexao {
         }
     }
     
-    public function update($Smartphone){
+    public function update($smartphone){
         try{
-            $stmt = $this->conn->prepare("UPDATE Smartphone SET S_nome=?,S_marca=?,S_modelo=?,S_codnome=?,S_CPU=?,S_GPU=?,S_Ram=?,S_Armazenamento=?,S_Chipset=?,S_Display=?,S_Rede=? "
+            $stmt = $this->conn->prepare("UPDATE Smartphone SET nome=?,marca=?,modelo=?,codnome=?,CPU=?,GPU=?,Ram=?,Armazenamento=?,Chipset=?,Display=?,Rede=? "
                     ." WHERE id = ?");
-                    $stmt->bindValue(1, $Smartphone->getS_nome());
-                    $stmt->bindValue(2, $Smartphone->getS_marca());
-                    $stmt->bindValue(3, $Smartphone->getS_modelo());
-                    $stmt->bindValue(4, $Smartphone->getS_codnome());
-                    $stmt->bindValue(5, $Smartphone->getS_CPU());
-                    $stmt->bindValue(6, $Smartphone->getS_GPU());
-                    $stmt->bindValue(7, $Smartphone->getS_Ram());
-                    $stmt->bindValue(8, $Smartphone->getS_Armazenamento());
-                    $stmt->bindValue(9, $Smartphone->getS_Chipset());
-                    $stmt->bindValue(10, $Smartphone->getS_Display());
-                    $stmt->bindValue(11, $Smartphone->getS_Rede());          
-                    $stmt->bindValue(13, $Smartphone->getS_id());
+                    $stmt->bindValue(1, $smartphone->getS_nome());
+                    $stmt->bindValue(2, $smartphone->getS_marca());
+                    $stmt->bindValue(3, $smartphone->getS_modelo());
+                    $stmt->bindValue(4, $smartphone->getS_codnome());
+                    $stmt->bindValue(5, $smartphone->getS_CPU());
+                    $stmt->bindValue(6, $smartphone->getS_GPU());
+                    $stmt->bindValue(7, $smartphone->getS_Ram());
+                    $stmt->bindValue(8, $smartphone->getS_Armazenamento());
+                    $stmt->bindValue(9, $smartphone->getS_Chipset());
+                    $stmt->bindValue(10, $smartphone->getS_Display());
+                    $stmt->bindValue(11, $smartphone->getS_Rede());          
+                    $stmt->bindValue(13, $smartphone->getS_id());
             return $stmt->execute();
             
         } catch (PDOException $ex) {
@@ -75,14 +75,14 @@ class SmartphonePDO extends Conexao {
             return false;
         }
     }
-            public function reativa($S_id){
+            public function reativa($s_id){
         try{
             $sql = 'UPDATE Smartphone SET flgstatus = ?  WHERE id = ?';
             
             $stmt = $this->conn->prepare($sql);
               
             $stmt->bindValue(1,  "C");
-            $stmt->bindValue(2,  $S_id);
+            $stmt->bindValue(2,  $s_id);
             
             return $stmt->execute();
             

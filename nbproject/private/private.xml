@@ -3,10 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/FelipeFlakster/Documents/NetBeansProjects/andhub/pdo/RomPDO.php</file>
             <file>file:/C:/Users/FelipeFlakster/Documents/NetBeansProjects/andhub/control/SmartphoneController.php</file>
-            <file>file:/C:/Users/FelipeFlakster/Documents/NetBeansProjects/andhub/control/MarcaController.php</file>
+            <file>file:/C:/Users/FelipeFlakster/Documents/NetBeansProjects/andhub/model/Smartphone.php</file>
+            <file>file:/C:/Users/FelipeFlakster/Documents/NetBeansProjects/andhub/pdo/SistemaPDO.php</file>
             <file>file:/C:/Users/FelipeFlakster/Documents/NetBeansProjects/andhub/control/RomController.php</file>
-            <file>file:/C:/Users/FelipeFlakster/Documents/NetBeansProjects/andhub/control/MainController.php</file>
+            <file>file:/C:/Users/FelipeFlakster/Documents/NetBeansProjects/andhub/pdo/SmartphonePDO.php</file>
         </group>
     </open-files>
 </project-private>

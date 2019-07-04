@@ -18,7 +18,7 @@ class RomController {
             echo "\n2. Alterar Rom";
             echo "\n3. Excluir Rom";
             echo "\n4. Listar todos as Rom";
-            echo "\n5. Listar Rom pelo nome";
+            echo "\n5. Listar Rom pelo Codnome";
             echo "\n6. Listar Rom pelo código";
             echo "\n7. Reativar Rom";
             echo "\n8. Listar Roms Inativas";
@@ -63,15 +63,15 @@ class RomController {
         $Rom->setR_versao(rtrim(fgets(STDIN)));
         echo"\n site da Rom: ";
         $Rom->setR_site(rtrim(fgets(STDIN)));
-        echo"\n Sistema da Rom: ";
+        echo"\n Codigo do Sistema da Rom: ";
         $Rom->setR_Sistema(rtrim(fgets(STDIN)));
         echo"\n Codnome da Rom: ";
         $Rom->setR_Codnome(rtrim(fgets(STDIN)));
         echo"\n RomGit da Rom: ";
         $Rom->setR_RomGit(rtrim(fgets(STDIN)));
-        echo"\n desenvolvedor da Rom: ";
+        echo"\n Nome do desenvolvedor da Rom: ";
         $Rom->setR_desenvolvedor(rtrim(fgets(STDIN)));
-        echo"\n Smartphone da Rom: ";
+        echo"\n Codigo do Smartphone da Rom: ";
         $Rom->setR_Smartphone(rtrim(fgets(STDIN)));
         echo"\n link da Rom: ";
         $Rom->setR_link(rtrim(fgets(STDIN)));
@@ -104,7 +104,7 @@ class RomController {
             if ($r_site != "\n") {
                 $Rom->setR_site(rtrim($r_site));
             }
-            echo"\n Sistema da Rom: ";
+            echo"\n Codigo do Sistema da Rom: ";
             $r_Sistema = fgets(STDIN);
             if ($r_Sistema != "\n") {
                 $Rom->setR_Sistema(rtrim($r_Sistema));
@@ -119,12 +119,12 @@ class RomController {
             if ($r_RomGit != "\n") {
                 $Rom->setR_RomGit(rtrim($r_RomGit));
             }
-            echo"\n desenvolvedor da Rom: ";
+            echo"\n Nome do desenvolvedor da Rom: ";
             $r_desenvolvedor = fgets(STDIN);
             if ($r_desenvolvedor != "\n") {
                 $Rom->setR_desenvolvedor(rtrim($r_desenvolvedor));
             }
-            echo"\n Smartphone da Rom: ";
+            echo"\n Codigo do Smartphone da Rom: ";
             $r_Smartphone = fgets(STDIN);
             if ($r_Smartphone != "\n") {
                 $Rom->setR_Smartphone(rtrim($r_Smartphone));
