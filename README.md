@@ -29,17 +29,5 @@ O projeto se inspira em plataformas como [xdaforums](https://xdaforums.com/) e [
 
 ## Tecnologias Utilizadas
 
-- HTML5, CSS3 (com possível uso de frameworks para o design)
-- JavaScript (para interatividade)
-- Backend para autenticação e armazenamento (ex: PHP, Node.js, etc.) — conforme implementação do projeto
-
----
-
-## Como Usar
-
-Este repositório contém o front-end do projeto e pode ser visualizado localmente clonando e abrindo o arquivo principal no navegador.
-
-```bash
-git clone https://github.com/Felipeflskater/AndHub.git
-cd AndHub
-# Abra o arquivo index.html em seu navegador
+- HTML5, CSS3
+- JavaScript
