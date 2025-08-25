@@ -28,6 +28,7 @@ O projeto se inspira em plataformas como [xdaforums](https://xdaforums.com/) e [
 ---
 
 ## Tecnologias Utilizadas
-
+- PHP
+- Postgres SQL
 - HTML5, CSS3
 - JavaScript
